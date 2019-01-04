@@ -158,7 +158,7 @@ var HomePage = (function () {
                 var tempF = +res.main.temp;
                 console.log(_this.weather.description);
                 _this.weather.tempC = Math.round((tempF - 273.15) * 100) / 100;
-                _this.icon_url = 'http://openweathermap.org/img/w/' + _this.weather.icon + '.png';
+                _this.icon_url = 'https://openweathermap.org/img/w/' + _this.weather.icon + '.png';
             });
         });
     };
@@ -166,10 +166,9 @@ var HomePage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"D:\Estudio\Ionic\Proyectos\ionic-cordova-app\src\pages\home\home.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>IWeather</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="home">\n  <ion-grid>\n    <ion-row>\n      <ion-col width-50 offset-25>\n        <h2 class="location">{{location}}</h2>\n        <div class="icon">\n          <img [src]="icon_url" alt="">\n        </div>\n        <h3 class="desc">{{weather.description}}</h3>\n        <h1 class="temp">{{weather.tempC}}</h1>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n`/*ion-inline-end:"D:\Estudio\Ionic\Proyectos\ionic-cordova-app\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__["a" /* WeatherProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__["a" /* WeatherProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__["a" /* WeatherProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], HomePage);
     return HomePage;
-    var _a, _b, _c;
 }());
 
 var Weather = (function () {
@@ -220,7 +219,7 @@ var WeatherProvider = (function () {
         console.log('Hello weather provider');
     }
     WeatherProvider.prototype.getWeather = function (city) {
-        this.url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + ',uk&APPID=' + this.key;
+        this.url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + ',uk&APPID=' + this.key;
         return this.http.get(this.url);
     };
     WeatherProvider = __decorate([
